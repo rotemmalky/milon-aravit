@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0" stop-color="#171C3E"/><stop offset="1" stop-color="#0C0F22"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.78" cy="0.06" r="0.85">
+      <stop offset="0" stop-color="#E9B558" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#E9B558" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#F6D89A"/><stop offset="1" stop-color="#E9B558"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#g)"/>
+  <rect width="512" height="512" rx="112" fill="url(#glow)"/>
+  <rect x="3" y="3" width="506" height="506" rx="109" fill="none" stroke="#FFFAF0" stroke-opacity=".12" stroke-width="6"/>
+  <g fill="none" stroke="url(#gold)" stroke-width="26" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M126 386V163a52 52 0 0152-52h208v278"/>
+    <path d="M178 363h208v52H178a52 52 0 01-52-52"/>
+    <path d="M212 208h130M212 264h86"/>
+  </g>
+</svg>
