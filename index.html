@@ -474,10 +474,10 @@ body::after{content:"قاموس";position:absolute;top:calc(env(safe-area-inset-
 @media(max-width:759px){.wod-ar{font-size:3.5rem}.wod-tr{font-size:1.65rem}.wod-face{padding:16px 18px 18px}}
 
 /* ═══ immersive dark (the default look): aurora + glass + gold ═══ */
-:root{--bg-d:#060a14;--glow1:#d4a24c;--glow2:#3d4fd6;--glow3:#0f6f8a}
-:root[data-palette=sunset]{--bg-d:#13070e;--glow1:#ff7a4d;--glow2:#a3246b;--glow3:#ffb347}
-:root[data-palette=olive]{--bg-d:#03110d;--glow1:#e6bb6a;--glow2:#0f8a6d;--glow3:#1b4f9c}
-:root[data-theme=dark]{--bg:var(--bg-d);--card:#121722;--chip:rgba(255,255,255,.07);--line:rgba(255,255,255,.08);--card-line:rgba(255,255,255,.09);--field:rgba(255,255,255,.07);--field-ph:#a39c92;--search-ic:var(--gold-2);--ar:var(--gold-2);--accent-ink:var(--gold-2);--muted:#a8a196;--ink-2:#d6cfc4}
+:root{--bg-d:#111827;--glow1:#d4a24c;--glow2:#3d4fd6;--glow3:#0f6f8a}
+:root[data-palette=sunset]{--bg-d:#1e1219;--glow1:#ff7a4d;--glow2:#a3246b;--glow3:#ffb347}
+:root[data-palette=olive]{--bg-d:#0f1e19;--glow1:#e6bb6a;--glow2:#0f8a6d;--glow3:#1b4f9c}
+:root[data-theme=dark]{--bg:var(--bg-d);--card:#1b2333;--chip:rgba(255,255,255,.07);--line:rgba(255,255,255,.08);--card-line:rgba(255,255,255,.09);--field:rgba(255,255,255,.07);--field-ph:#a39c92;--search-ic:var(--gold-2);--ar:var(--gold-2);--accent-ink:var(--gold-2);--muted:#a8a196;--ink-2:#d6cfc4}
 :root[data-theme=dark] body::before{position:fixed;inset:-25% -25% auto -25%;height:150vh;border-radius:0;box-shadow:none;transition:none;
   background:radial-gradient(38% 30% at 22% 14%,color-mix(in srgb,var(--glow1) 34%,transparent),transparent 70%),radial-gradient(45% 35% at 82% 30%,color-mix(in srgb,var(--glow2) 40%,transparent),transparent 70%),radial-gradient(50% 40% at 40% 80%,color-mix(in srgb,var(--glow3) 26%,transparent),transparent 70%);}
 :root[data-theme=dark] body{background:var(--bg-d)}
@@ -537,6 +537,50 @@ body::after{content:"قاموس";position:absolute;top:calc(env(safe-area-inset-
 :root[data-theme=light] .wod-label{color:#fff;background:rgba(0,0,0,.2);border-color:rgba(255,255,255,.18)}
 :root[data-theme=dark][data-palette=sunset]{--muted:#bdb5aa}
 
+/* ═══ clarity pass: one focal point per screen, gold only where it means something ═══ */
+body::after{content:none}                                   /* no calligraphy behind the header controls */
+.hero-copy{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}   /* title + count stay for screen readers */
+.hero{padding-top:2px}
+.quick-categories{margin-bottom:22px}
+.section-heading{margin-bottom:10px}
+.section-heading h2{font-size:1.15rem;font-family:var(--ui);font-weight:600;color:var(--ink-2)}
+/* why this card matches — plain Hebrew, one quiet line */
+.word-why{display:block;margin:6px 0 0;padding-left:40px;font-size:.88rem;line-height:1.5;color:var(--muted)}
+.word-why bdi{font-family:var(--ar-font);font-size:1.05em;color:var(--ink-2)}
+.why-gloss{color:var(--ink-2);font-weight:500}
+.why-note{color:var(--muted)}
+.tag.via{display:none}
+/* the best match is the answer */
+.word-card.top-hit{border-color:color-mix(in srgb,var(--accent) 45%,var(--card-line))}
+.word-card.top-hit .word-tr{font-size:2.05rem}
+.word-card.top-hit .word-meaning{font-size:1.12rem;color:var(--ink);font-weight:500}
+.word-card:not(.top-hit)::before{opacity:.55}
+/* word of the day: a compact invitation, not a banner */
+.wod-face{grid-template-columns:auto 1fr;grid-template-areas:"label label" "ar tr" "ar he";justify-items:start;align-items:center;column-gap:18px;text-align:right;padding:14px 20px 16px}
+.wod-label{grid-area:label;margin-bottom:6px;font-size:.76rem;padding:3px 10px}
+.wod-ar{grid-area:ar;font-size:2.7rem;line-height:1.3;margin:0;justify-self:end}
+.wod-tr{grid-area:tr;font-size:1.45rem;margin:0}
+.wod-he{grid-area:he;margin:0;font-size:.98rem}
+@media(min-width:1000px){.wod-ar{font-size:3.2rem}.wod-tr{font-size:1.7rem}}
+@media(max-width:759px){.wod-ar{font-size:2.4rem}.wod-tr{font-size:1.35rem}}
+/* dark: gold is for state, Arabic is legible flat ivory-gold */
+:root[data-theme=dark] .word-ar,:root[data-theme=dark] .phrase-ar,:root[data-theme=dark] .example-ar,:root[data-theme=dark] .conjugation .arabic,:root[data-theme=dark] .related-word [lang=ar]{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--ar-flat)}
+:root{--ar-flat:#e6c993}
+:root[data-palette=sunset]{--ar-flat:#f3bfa0}
+:root[data-palette=olive]{--ar-flat:#e3c88f}
+:root[data-theme=dark] .word-card::before{box-shadow:none}
+:root[data-theme=dark] .word-card.top-hit{background:linear-gradient(160deg,rgba(255,255,255,.11),rgba(255,255,255,.035));border-color:color-mix(in srgb,var(--gold) 38%,transparent)}
+:root[data-theme=dark] .category-pill[aria-pressed=true]{background:color-mix(in srgb,var(--gold) 18%,transparent);color:var(--gold-2);border-color:color-mix(in srgb,var(--gold) 55%,transparent);box-shadow:none}
+:root[data-theme=dark] .category-pill[aria-pressed=true] svg{color:var(--gold-2)}
+:root[data-theme=dark] .nav-bar>button[aria-current=page]{background:rgba(255,255,255,.09);color:var(--gold-2);box-shadow:none}
+:root[data-theme=dark] .tag.verb{background:rgba(255,255,255,.07);color:var(--gold-2)}
+:root[data-theme=dark] .word-why bdi{color:var(--ar-flat)}
+.speech-caption{font-size:.72rem;opacity:.85}
+
+/* softer dark: a touch lighter surfaces so the page feels calm, not black */
+:root[data-theme=dark] .word-card,:root[data-theme=dark] .more-button,:root[data-theme=dark] .category-group,:root[data-theme=dark] .requests-view,:root[data-theme=dark] .conjugation,:root[data-theme=dark] .phrase-list,:root[data-theme=dark] .example,:root[data-theme=dark] .related-section>summary,:root[data-theme=dark] .forms-expand,:root[data-theme=dark] .ambiguous-choice,:root[data-theme=dark] .empty-state{background:linear-gradient(160deg,rgba(255,255,255,.095),rgba(255,255,255,.045))}
+:root[data-theme=dark] .nav-bar{background:color-mix(in srgb,var(--bg-d) 70%,rgba(255,255,255,.08))}
+:root[data-theme=dark]{--ink-2:#ddd6cb;--muted:#b1aa9f}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -981,10 +1025,24 @@ function kin(w){
     const filtered=groups.map(g=>({...g,cats:g.cats.filter(c=>core.categories.has(c)&&(!query||MilonCore.norm(c+' '+g.title).includes(query)))})).filter(g=>g.cats.length);
     $('categoryGroups').innerHTML=filtered.length?filtered.map(g=>`<details class="category-group" open><summary><span><i class="group-icon">${icon(g.icon)}</i>${esc(g.title)}</span><i class="chevron">${icon('chevron')}</i></summary><div class="category-items">${g.cats.map(c=>`<button class="category-item" data-category="${esc(c)}"><span>${esc(c)}</span><span class="number">${fmt(core.categories.get(c))}</span></button>`).join('')}</div></details>`).join(''):emptyHTML('לא מצאנו נושא כזה.','נסו שם אחר, או עברו למילון כדי לחפש מילה.','grid');
   }
+  /* One plain-Hebrew line that says why this card answers the query (never engine jargon). */
+  function whyHTML(row){
+    const v=row.via;if(!v)return '';const q=$('q').value.trim(),b=x=>`<bdi lang="ar">${esc(x)}</bdi>`;
+    const person=l=>esc(l.replace(/^תעתיק · /,'').replace(/^הווה \(אחרי بدي\/لازم\)/,'הווה בלי ב׳').replace(/ · /g,', '));
+    if(v.label==='פירוק'){
+      const parts=v.text.split(' + ').map(p=>{const m=p.match(/^(.*?) \((.*)\)$/);if(!m)return b(p);const ar=m[1],g=m[2];
+        return /^(עבר|הווה|ציווי|תעתיק)/.test(g)?`${b(ar)} <span class="why-note">(${person(g)})</span>`:`<span class="why-gloss">${esc(g)}</span>`;});
+      return `<span class="word-why">${b(q)} = ${parts.join(' + ')}</span>`;}
+    if(v.label==='כתיב חלופי')return `<span class="word-why">כתיב אחר של ${b(v.text)}</span>`;
+    if(v.label==='מתוך החיפוש')return `<span class="word-why">מתוך החיפוש: ${b(v.text.split(' = ')[0].split(' (')[0])}</span>`;
+    if(v.label==='משפט לדוגמה')return `<span class="word-why">מופיע במשפט לדוגמה</span>`;
+    if(/^(עבר|הווה|ציווי|תעתיק)/.test(v.label))return `<span class="word-why">${b(v.text)} היא צורת הפועל: ${person(v.label)}</span>`;
+    return `<span class="word-why">${esc(v.label)}</span>`;
+  }
   function cardHTML(row){
     const e=row.entry,saved=favorites.has(e.id),verb=!!(e.conj||e.pres||e.imp),long=/\s/.test(e.tr.trim())||e.ar.length>18||MilonCore.norm(e.tr).length>19;
     const catLabel=e.cat==='פעלים - נטיות'?'פעלים':e.cat;
-    return `<article class="word-card${long?' long':''}" data-entry="${e.id}"><button class="word-face" data-open="${e.id}" aria-label="${esc(e.tr+' — '+e.he)}"><span class="word-line"><span class="word-tr" dir="rtl">${esc(trx(e.tr))}</span><span class="word-ar" lang="ar" dir="rtl">${esc(e.ar)}</span></span><span class="word-bottom"><span class="word-meaning">${esc(e.he)}</span><span class="word-meta"><span class="tag${verb||e.cat==='ברכות'?' terra':''}">${esc(catLabel)}</span>${verb?'<span class="tag verb">נטייה מלאה</span>':''}${row.via?`<span class="tag via">${esc(row.via.label)} · ${esc(row.via.text)}</span>`:''}</span></span></button><button class="bookmark" data-save="${e.id}" aria-pressed="${saved}" aria-label="${saved?'הסרה מהשמורים':'שמירת המילה'}">${icon('bookmark')}</button></article>`;
+    return `<article class="word-card${long?' long':''}" data-entry="${e.id}"><button class="word-face" data-open="${e.id}" aria-label="${esc(e.tr+' — '+e.he)}"><span class="word-line"><span class="word-tr" dir="rtl">${esc(trx(e.tr))}</span><span class="word-ar" lang="ar" dir="rtl">${esc(e.ar)}</span></span><span class="word-bottom"><span class="word-meaning">${esc(e.he)}</span><span class="word-meta"><span class="tag${verb||e.cat==='ברכות'?' terra':''}">${esc(catLabel)}</span>${verb?'<span class="tag verb">נטייה מלאה</span>':''}</span></span>${whyHTML(row)}</button><button class="bookmark" data-save="${e.id}" aria-pressed="${saved}" aria-label="${saved?'הסרה מהשמורים':'שמירת המילה'}">${icon('bookmark')}</button></article>`;
   }
   function emptyHTML(title,text,symbol='search',actions=''){return `<div class="empty-state"><div class="empty-symbol">${icon(symbol)}</div><h3>${title}</h3><p>${text}</p>${actions}</div>`;}
   /* מילה ליום: נבחרת לפי התאריך מתוך ערכים קצרים שיש להם משפט דוגמה */
@@ -993,7 +1051,7 @@ function kin(w){
     if(!dayPool)dayPool=dictionary.filter(e=>e.ex?.length&&e.ex[0].ar&&e.ex[0].he&&e.tr&&!/\s/.test(e.tr.trim())&&e.ar.length<=12&&e.he.length<=34&&e.cat!=='מקומות בארץ');
     if(!dayPool.length)return '';
     const d=new Date(),day=Math.floor((d.getTime()-d.getTimezoneOffset()*6e4)/864e5),e=dayPool[(day*7919)%dayPool.length],x=e.ex[0];
-    return `<article class="word-of-day"><button class="wod-face" data-open="${e.id}" aria-label="${esc('מילה ליום: '+e.tr+' — '+e.he)}"><span class="wod-label">${icon('spark')} מילה ליום</span><span class="wod-ar" lang="ar" dir="rtl">${esc(e.ar)}</span><span class="wod-tr" dir="rtl">${esc(trx(e.tr))}</span><span class="wod-he">${esc(e.he)}</span><span class="wod-ex"><span class="wod-ex-ar" lang="ar" dir="rtl">${esc(x.ar)}</span><span class="wod-ex-he">${esc(x.he)}</span></span></button></article>`;
+    return `<article class="word-of-day"><button class="wod-face" data-open="${e.id}" aria-label="${esc('מילה ליום: '+e.tr+' — '+e.he)}"><span class="wod-label">${icon('spark')} מילה ליום</span><span class="wod-ar" lang="ar" dir="rtl">${esc(e.ar)}</span><span class="wod-tr" dir="rtl">${esc(trx(e.tr))}</span><span class="wod-he">${esc(e.he)}</span></button></article>`;
   }
   function renderResults(){
     const query=$('q').value.trim();$('clearSearch').hidden=!query;
@@ -1016,7 +1074,7 @@ function kin(w){
   }
   function appendPage(){
     const old=results.querySelector('.more-button');if(old)old.remove();
-    results.insertAdjacentHTML('beforeend',result.rows.slice(shown,shown+PAGE).map(cardHTML).join(''));shown=Math.min(shown+PAGE,result.rows.length);
+    results.insertAdjacentHTML('beforeend',result.rows.slice(shown,shown+PAGE).map(cardHTML).join(''));if(!shown&&$('q').value.trim())results.querySelector('.word-card')?.classList.add('top-hit');shown=Math.min(shown+PAGE,result.rows.length);
     if(shown<result.rows.length)results.insertAdjacentHTML('beforeend',`<button class="more-button" data-action="more">עוד ${Math.min(PAGE,result.rows.length-shown)} מילים ${icon('chevron')} <span class="more-note">${fmt(shown)} מתוך ${fmt(result.rows.length)}</span></button>`);
     else if(result.loose.length&&!results.querySelector('.loose-heading')){results.insertAdjacentHTML('beforeend',`<h3 class="loose-heading">${result.rows.length?'אולי התכוונתם גם ל…':'לא נמצא בדיוק — אולי התכוונתם ל…'}</h3>`+result.loose.map(cardHTML).join(''));if(!result.rows.length)$('resultCount').textContent=fmt(result.loose.length)+' הצעות קרובות';}
     appendRequestPrompt();
@@ -1041,7 +1099,7 @@ function kin(w){
     const tenseList=[];if(entry.conj)tenseList.push(['עבר',entry.conj]);if(entry.pres)tenseList.push(['הווה',entry.pres]);if(entry.imp)tenseList.push(['ציווי',entry.imp]);
     const k=kin(entry),long=MilonCore.norm(entry.tr).length>13;
     const type=tenseList.length?'פועל':entry.cat;
-    $('detailContent').innerHTML=`<section class="detail-top" id="detailTop" tabindex="-1"><span class="detail-glyph" lang="ar" aria-hidden="true">${esc(String(entry.ar).trim().split(/\s+/)[0])}</span><div class="detail-bar"><button class="detail-back" data-action="close-detail">${icon('arrowRight')} חזרה</button><button class="detail-save" data-save="${entry.id}" aria-pressed="${favorites.has(entry.id)}" aria-label="שמירת המילה">${icon('bookmark')}</button></div><span class="word-type">${esc(type)}</span><h1 id="detailTitle" class="detail-title${long?' long':''}">${esc(trx(entry.tr))}</h1><div class="detail-ar${long?' long':''}" lang="ar" dir="rtl">${esc(entry.ar)}</div><p class="detail-meaning">${esc(entry.he)}</p><div class="detail-rule" aria-hidden="true"><i></i></div><button class="hear-button" data-action="speak">${icon('volume')} <span>השמעה</span></button><p class="speech-caption" id="speechCaption">הגייה ממוחשבת · אינה בהכרח בלהג פלסטיני</p></section><div class="detail-sheet">${entry.ex?.length?`<section class="detail-section"><h2>כך אומרים את זה</h2>${entry.ex.map(x=>`<div class="example">${x.tr?`<p class="example-tr" dir="rtl">${esc(trx(x.tr))}</p>`:''}<p class="example-ar" lang="ar" dir="rtl">${esc(x.ar)}</p><p class="example-he">${esc(x.he)}</p></div>`).join('')}</section>`:''}${tenseList.length?`<section class="detail-section"><h2>איך משתמשים בפועל?</h2><div class="tense-tabs" role="tablist" aria-label="זמן הפועל">${tenseList.map((t,i)=>`<button id="tenseTab${i}" role="tab" data-tense="${i}" aria-controls="tensePanel" aria-selected="false" tabindex="-1">${t[0]}</button>`).join('')}</div><div id="tensePanel" role="tabpanel" tabindex="0"></div></section>`:''}<section class="detail-section" id="phraseSection" hidden></section>${k.l.length?`<details class="detail-section related-section"><summary><h2>מילים בקשר משוער</h2><span class="related-note">ניחוש לפי שורש, לא קשר ודאי</span></summary><div class="related-list">${k.l.map(e=>`<button class="related-word" data-open="${e.id}"><span lang="ar">${esc(e.ar)}</span><span class="related-he">${esc(e.he)}</span></button>`).join('')}</div></details>`:''}<div class="detail-tools"><button class="external-tool" data-action="copy-ar">העתקת הערבית ${icon('copy')}</button><a class="external-tool" href="https://youglish.com/pronounce/${encodeURIComponent(entry.ar)}/arabic" target="_blank" rel="noopener noreferrer">הגייה בסרטון ${icon('external')}</a><a class="external-tool" href="https://forvo.com/word/${encodeURIComponent(entry.ar)}/" target="_blank" rel="noopener noreferrer">Forvo ${icon('external')}</a><button class="external-tool" data-action="share-entry">העתקת קישור ${icon('external')}</button></div><p class="external-caption">מקורות ההגייה החיצוניים דורשים חיבור לאינטרנט.</p></div>`;
+    $('detailContent').innerHTML=`<section class="detail-top" id="detailTop" tabindex="-1"><span class="detail-glyph" lang="ar" aria-hidden="true">${esc(String(entry.ar).trim().split(/\s+/)[0])}</span><div class="detail-bar"><button class="detail-back" data-action="close-detail">${icon('arrowRight')} חזרה</button><button class="detail-save" data-save="${entry.id}" aria-pressed="${favorites.has(entry.id)}" aria-label="שמירת המילה">${icon('bookmark')}</button></div><span class="word-type">${esc(type)}</span><h1 id="detailTitle" class="detail-title${long?' long':''}">${esc(trx(entry.tr))}</h1><div class="detail-ar${long?' long':''}" lang="ar" dir="rtl">${esc(entry.ar)}</div><p class="detail-meaning">${esc(entry.he)}</p><div class="detail-rule" aria-hidden="true"><i></i></div><button class="hear-button" data-action="speak">${icon('volume')} <span>השמעה</span></button><p class="speech-caption" id="speechCaption">קול ממוחשב · לא בהכרח במבטא פלסטיני</p></section><div class="detail-sheet">${entry.ex?.length?`<section class="detail-section"><h2>כך אומרים את זה</h2>${entry.ex.map(x=>`<div class="example">${x.tr?`<p class="example-tr" dir="rtl">${esc(trx(x.tr))}</p>`:''}<p class="example-ar" lang="ar" dir="rtl">${esc(x.ar)}</p><p class="example-he">${esc(x.he)}</p></div>`).join('')}</section>`:''}${tenseList.length?`<section class="detail-section"><h2>איך משתמשים בפועל?</h2><div class="tense-tabs" role="tablist" aria-label="זמן הפועל">${tenseList.map((t,i)=>`<button id="tenseTab${i}" role="tab" data-tense="${i}" aria-controls="tensePanel" aria-selected="false" tabindex="-1">${t[0]}</button>`).join('')}</div><div id="tensePanel" role="tabpanel" tabindex="0"></div></section>`:''}<section class="detail-section" id="phraseSection" hidden></section>${k.l.length?`<details class="detail-section related-section"><summary><h2>מילים בקשר משוער</h2><span class="related-note">ניחוש לפי שורש, לא קשר ודאי</span></summary><div class="related-list">${k.l.map(e=>`<button class="related-word" data-open="${e.id}"><span lang="ar">${esc(e.ar)}</span><span class="related-he">${esc(e.he)}</span></button>`).join('')}</div></details>`:''}<div class="detail-tools"><button class="external-tool" data-action="copy-ar">העתקת הערבית ${icon('copy')}</button><a class="external-tool" href="https://youglish.com/pronounce/${encodeURIComponent(entry.ar)}/arabic" target="_blank" rel="noopener noreferrer">הגייה בסרטון ${icon('external')}</a><a class="external-tool" href="https://forvo.com/word/${encodeURIComponent(entry.ar)}/" target="_blank" rel="noopener noreferrer">Forvo ${icon('external')}</a><button class="external-tool" data-action="share-entry">העתקת קישור ${icon('external')}</button></div><p class="external-caption">מקורות ההגייה החיצוניים דורשים חיבור לאינטרנט.</p></div>`;
     currentTenses=tenseList;
     if(tenseList.length)renderTense(Math.max(0,tenseList.findIndex(t=>t[0]==='הווה')));
     syncSaved();document.title=entry.tr+' — '+entry.he+' | מילון';showDialog();$('detailTop').focus({preventScroll:true});fillPhrases(entry);
