@@ -2,7 +2,7 @@
 'use strict';
 const SCOPE=new URL(self.registration.scope);
 const CACHE_PREFIX='milon-aravit:'+SCOPE.pathname+':';
-const CACHE_VERSION=CACHE_PREFIX+'v40-e1c0c0dd8cca';
+const CACHE_VERSION=CACHE_PREFIX+'v40-b0c304665d9d';
 const INDEX_URL=new URL('index.html',SCOPE).href;
 const ROOT_URL=SCOPE.href;
 const APP_SHELL=['./','./index.html','./manifest.json','./icon.svg','./icon-192.png','./icon-512.png','./icon-maskable.png'];
