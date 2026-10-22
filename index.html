@@ -35,13 +35,13 @@
   --ar-display:"Amiri X","Naskh X",serif;
   --ease:cubic-bezier(.2,.8,.2,1);
   --gutter:40px;--band-h:262px;
-  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23e8c27a' stroke-opacity='.11' stroke-width='1'%3E%3Cpath d='M28 6l6.5 15.5L50 28l-15.5 6.5L28 50l-6.5-15.5L6 28l15.5-6.5z'/%3E%3Cpath d='M12.5 12.5h31v31h-31z'/%3E%3Ccircle cx='28' cy='28' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23e8c27a' stroke-opacity='.055' stroke-width='1'%3E%3Cpath d='M28 6l6.5 15.5L50 28l-15.5 6.5L28 50l-6.5-15.5L6 28l15.5-6.5z'/%3E%3Cpath d='M12.5 12.5h31v31h-31z'/%3E%3Ccircle cx='28' cy='28' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
 :root[data-palette=sunset]{
   --band1:#c2462a;--band2:#6d2550;--gold:#ffc9a8;--gold-2:#ffd9bf;--nav:#3b1530;
   --accent:#c8472b;--accent-ink-l:#9c3218;--accent-ink-d:#f2a184;--accent-soft-l:#fbe3d9;--accent-soft-d:#3d1f1a;
   --ar-l:#7a2d5c;--ar-d:#eaa7cf;--bg-l:#f7f2ef;--chip-l:#f6eeea;--pill-icon:#c8472b;
-  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.10' stroke-width='1'%3E%3Cpath d='M28 6l6.5 15.5L50 28l-15.5 6.5L28 50l-6.5-15.5L6 28l15.5-6.5z'/%3E%3Cpath d='M12.5 12.5h31v31h-31z'/%3E%3Ccircle cx='28' cy='28' r='5'/%3E%3C/g%3E%3C/svg%3E");
+  --pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='.05' stroke-width='1'%3E%3Cpath d='M28 6l6.5 15.5L50 28l-15.5 6.5L28 50l-6.5-15.5L6 28l15.5-6.5z'/%3E%3Cpath d='M12.5 12.5h31v31h-31z'/%3E%3Ccircle cx='28' cy='28' r='5'/%3E%3C/g%3E%3C/svg%3E");
 }
 :root[data-palette=olive]{
   --band1:#0a2f29;--band2:#14574a;--gold:#e6bb6a;--gold-2:#f0cd85;--nav:#0c2f29;
@@ -446,7 +446,7 @@ body::after{content:"قاموس";position:absolute;top:calc(env(safe-area-inset-
 .word-ar{font-size:1.62rem;line-height:1.45;text-align:left}
 .word-card.long .word-line{flex-direction:column;align-items:flex-start}
 .word-card.long .word-ar{text-align:right}
-.word-face:hover .word-ar,.word-face:focus-visible .word-ar{color:var(--accent-ink)}
+
 /* entry page: the word itself, written large, behind the header */
 .detail-top{overflow:hidden}
 .detail-glyph{display:block;position:absolute;left:14px;bottom:-34px;font:400 10.5rem/1.2 var(--ar-display);background:linear-gradient(175deg,var(--gold-2),var(--gold) 50%,transparent 92%);-webkit-background-clip:text;background-clip:text;color:transparent;opacity:.16;pointer-events:none;white-space:nowrap;max-width:62%;overflow:hidden;animation:calli-in2 1.1s .1s var(--ease) both}
@@ -510,19 +510,20 @@ body::after{content:"قاموس";position:absolute;top:calc(env(safe-area-inset-
 :root[data-theme=dark] .request-add input{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12)}
 /* entry page: immersive, centred, the Arabic as hero */
 :root[data-theme=dark] .detail-dialog{background:radial-gradient(70% 45% at 50% 0%,color-mix(in srgb,var(--glow2) 38%,transparent),transparent 72%),radial-gradient(50% 30% at 15% 25%,color-mix(in srgb,var(--glow1) 26%,transparent),transparent 70%),var(--bg-d);border:1px solid rgba(255,255,255,.08)}
-:root[data-theme=dark] .detail-top{background:none;box-shadow:none;border-radius:0;display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:22px}
-:root[data-theme=dark] .detail-bar{width:100%;order:0}
-:root[data-theme=dark] .word-type{order:1;margin-bottom:2px}
-:root[data-theme=dark] .word-type::before{display:none}
-:root[data-theme=dark] .detail-ar{order:2;font-size:clamp(3.8rem,15vw,5.4rem);line-height:1.45;margin:0;background:linear-gradient(170deg,#fff3d6 5%,var(--gold-2) 40%,var(--gold) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 8px 34px color-mix(in srgb,var(--gold) 55%,transparent));animation:ar-in .8s var(--ease) both}
-:root[data-theme=dark] .detail-ar.long{font-size:clamp(2.2rem,8vw,3rem)}
-:root[data-theme=dark] .detail-title{order:3;font-size:clamp(2.2rem,9vw,3rem)}
-:root[data-theme=dark] .detail-title.long{font-size:clamp(1.6rem,6.5vw,2.1rem)}
-:root[data-theme=dark] .detail-meaning{order:4;margin-inline:auto}
-:root[data-theme=dark] .detail-rule{order:5;margin-inline:auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);width:120px;height:1px}
-:root[data-theme=dark] .hear-button{order:6;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
-:root[data-theme=dark] .hear-button svg{color:var(--gold-2)}
-:root[data-theme=dark] .speech-caption{order:7;margin:10px 0 0;max-width:none}
+:root[data-theme=dark] .detail-top{background:none;box-shadow:none;border-radius:0}
+.detail-top{display:flex;flex-direction:column;align-items:center;text-align:center;padding-bottom:22px}
+.detail-bar{width:100%;order:0}
+.word-type{order:1;margin-bottom:2px}
+.word-type::before{display:none}
+.detail-ar{order:2;font-size:clamp(3.8rem,15vw,5.4rem);line-height:1.45;margin:0;background:linear-gradient(170deg,#fff3d6 5%,var(--gold-2) 40%,var(--gold) 90%);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 8px 34px color-mix(in srgb,var(--gold) 55%,transparent));animation:ar-in .8s var(--ease) both}
+.detail-ar.long{font-size:clamp(2.2rem,8vw,3rem)}
+.detail-title{order:3;font-size:clamp(2.2rem,9vw,3rem)}
+.detail-title.long{font-size:clamp(1.6rem,6.5vw,2.1rem)}
+.detail-meaning{order:4;margin-inline:auto}
+.detail-rule{order:5;margin-inline:auto;background:linear-gradient(90deg,transparent,var(--gold),transparent);width:120px;height:1px}
+.hear-button{order:6;background:rgba(255,255,255,.09);color:#fff;border:1px solid rgba(255,255,255,.16);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+.hear-button svg{color:var(--gold-2)}
+.speech-caption{order:7;margin:10px 0 0;max-width:none}
 :root[data-theme=dark] .detail-glyph{left:50%;transform:translateX(-50%);top:30px;bottom:auto;max-width:none;font-size:15rem;opacity:.08;animation:none}
 :root[data-theme=dark] .detail-save{background:rgba(255,255,255,.08)}
 :root[data-theme=dark] .tense-tabs{background:color-mix(in srgb,var(--bg-d) 82%,transparent);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px)}
@@ -581,6 +582,103 @@ body::after{content:none}                                   /* no calligraphy be
 :root[data-theme=dark] .word-card,:root[data-theme=dark] .more-button,:root[data-theme=dark] .category-group,:root[data-theme=dark] .requests-view,:root[data-theme=dark] .conjugation,:root[data-theme=dark] .phrase-list,:root[data-theme=dark] .example,:root[data-theme=dark] .related-section>summary,:root[data-theme=dark] .forms-expand,:root[data-theme=dark] .ambiguous-choice,:root[data-theme=dark] .empty-state{background:linear-gradient(160deg,rgba(255,255,255,.095),rgba(255,255,255,.045))}
 :root[data-theme=dark] .nav-bar{background:color-mix(in srgb,var(--bg-d) 70%,rgba(255,255,255,.08))}
 :root[data-theme=dark]{--ink-2:#ddd6cb;--muted:#b1aa9f}
+/* light/dark parity for the clarity pass */
+.nav-bar>button[aria-current=page]{background:rgba(255,255,255,.11);color:var(--gold-2);box-shadow:none}
+.word-card::before{display:none}
+.word-card.top-hit::before{display:block;opacity:1}
+:root[data-theme=light] .word-of-day{background:var(--card);border:1px solid color-mix(in srgb,var(--accent) 30%,var(--card-line));box-shadow:var(--shadow)}
+:root[data-theme=light] .word-of-day::after{display:none}
+:root[data-theme=light] .wod-face{color:var(--ink)}
+:root[data-theme=light] .wod-label{color:var(--accent-ink);background:var(--accent-soft);border-color:transparent}
+:root[data-theme=light] .wod-ar{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--ar);filter:none}
+:root[data-theme=light] .wod-he{color:var(--ink-2)}
+/* ═══ precision pass (design review) ═══ */
+/* cards: transliteration, Arabic, then meaning + tags in one row, then the why-line; bookmark top-left */
+.word-line,.word-card.long .word-line{flex-direction:column;align-items:flex-start;gap:0}
+.word-ar,.word-card.long .word-ar{text-align:right}
+.word-face{padding-left:58px}
+.word-bottom{display:flex;align-items:center;justify-content:space-between;gap:6px 12px;flex-wrap:wrap;margin-top:6px;padding-left:0;min-height:0}
+.word-meta{justify-content:flex-end;max-width:none;flex-wrap:wrap}
+.word-why{padding-left:0;margin-top:6px}
+.bookmark{top:10px;bottom:auto;left:8px}
+@media(hover:hover){.bookmark:hover{color:var(--accent-ink);background:var(--chip)}}
+@media(hover:none){.bookmark:hover{background:none}}
+/* scroll-to-top: phones already have the sticky search */
+@media(max-width:759px){.scroll-top{display:none!important}}
+/* appearance menu */
+.modes button{white-space:nowrap;font-size:.84rem}
+:root[data-theme=dark] .swatch i{box-shadow:inset 0 0 0 2px rgba(255,255,255,.35),0 0 0 1px rgba(255,255,255,.25)}
+/* search focus: a clean white ring on the band */
+.search-form:focus-within{box-shadow:0 0 0 3px rgba(255,255,255,.6),0 14px 34px -14px rgba(0,0,0,.5)}
+:root[data-theme=dark] .search-form:focus-within{box-shadow:0 0 0 3px color-mix(in srgb,var(--gold) 45%,transparent),0 14px 34px -14px rgba(0,0,0,.6)}
+.search-icon{width:44px}
+/* desktop: centred search, no lopsided band */
+@media(min-width:1000px){.hero{display:block;max-width:760px;margin-inline:auto}body.scrolled .hero{max-width:none}.quick-categories{justify-content:center}.word-of-day{max-width:620px;margin-inline:auto;width:100%}}
+/* tense tabs: a real segmented control, readable in both modes */
+.tense-tabs{position:static;display:flex;width:fit-content;gap:2px;padding:4px;margin:0 0 12px;border-radius:999px;background:var(--chip);border:1px solid var(--line);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 6px 16px -10px rgba(0,0,0,.35)}
+:root[data-theme=light] .tense-tabs{background:#e9e3d7}
+.tense-tabs button{min-height:40px;padding:0 18px;background:transparent;color:var(--ink-2);border-radius:999px}
+.tense-tabs button[aria-selected=true]{background:var(--card);color:var(--ink);font-weight:600;box-shadow:0 2px 8px -3px rgba(0,0,0,.3)}
+:root[data-theme=dark] .tense-tabs{background:#262f40}
+:root[data-theme=dark] .tense-tabs button[aria-selected=true]{background:linear-gradient(150deg,var(--gold-2),var(--gold));color:#1a1206}
+/* conjugation: pronoun | transliteration | Arabic */
+.conjugation .pronoun{width:20%}
+.conjugation .translit{text-align:right;width:42%}
+.conjugation .arabic{text-align:left;width:38%}
+.forms-expand[aria-expanded=true] svg{transform:rotate(180deg)}
+/* tools: copy actions, then external sources */
+.detail-tools{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.external-tool{justify-content:center}
+.detail-sheet:not(:has(.detail-section:not([hidden]))) .detail-tools{border-top:0;margin-top:12px;padding-top:0}
+.speech-caption{font-size:.78rem;opacity:1;color:rgba(255,255,255,.8)}
+.detail-glyph{display:none}
+/* filter chip is redundant with the active pill */
+.active-filter{display:none!important}
+/* categories */
+@media(max-width:759px){.category-items{grid-template-columns:1fr}}
+.category-item{align-items:center}
+.category-item>span:first-child{min-width:0}
+/* pills row fades at the edge instead of cutting a pill */
+.quick-categories{-webkit-mask-image:linear-gradient(to left,#000 88%,transparent);mask-image:linear-gradient(to left,#000 88%,transparent)}
+/* translucent bars must not show text through them */
+:root[data-theme=dark] .nav-bar{background:rgba(20,26,38,.95)}
+:root[data-theme=dark] body.scrolled .hero{background:color-mix(in srgb,var(--bg-d) 95%,transparent)}
+/* section heading */
+.text-button{white-space:nowrap}
+.results-heading h2{overflow-wrap:anywhere}
+/* word of the day: transliteration + meaning on the right, Arabic on the left, like the cards */
+.wod-face{grid-template-columns:1fr auto;grid-template-areas:"label label" "tr ar" "he ar";column-gap:16px}
+.wod-ar{justify-self:start}
+
+/* review round 2 */
+.saved-dot{display:none!important}
+.conjugation .pronoun{width:18%}
+.conjugation .translit,.conjugation .arabic{width:41%;text-align:right}
+.wod-face{grid-template-columns:auto auto;justify-content:start;column-gap:24px}
+.wod-ar{justify-self:start}
+@media(min-width:1000px){.word-of-day{max-width:none}.results-section{margin-top:24px}}
+:root[data-theme=dark] .tense-tabs button[aria-selected=true]{background:rgba(255,255,255,.13);color:var(--gold-2);box-shadow:none}
+/* ═══ dark mode: matte warm charcoal (no glow, no glass) — same structure as light ═══ */
+:root{--D-bg:#161412;--D-card:#201d1a;--D-card2:#26221e;--D-line:#2e2a25;--D-line2:#3a352f;--D-chip:#2a2622;--D-ink:#efe8dd;--D-ink2:#d6cdbf;--D-muted:#a69d90;--D-ar:#e3c58f;--D-field:#24201c;--D-nav:#1d1a17;--D-band:linear-gradient(180deg,#221e1a,#1b1815);--D-accentline:rgba(214,175,105,.45);--D-pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23e8c27a' stroke-opacity='.045' stroke-width='1'%3E%3Cpath d='M28 6l6.5 15.5L50 28l-15.5 6.5L28 50l-6.5-15.5L6 28l15.5-6.5z'/%3E%3Cpath d='M12.5 12.5h31v31h-31z'/%3E%3Ccircle cx='28' cy='28' r='5'/%3E%3C/g%3E%3C/svg%3E")}
+:root[data-palette=sunset]{--D-bg:#181214;--D-card:#231c1e;--D-card2:#2a2124;--D-line:#33292c;--D-line2:#41353a;--D-chip:#2d2427;--D-ink:#efe8dd;--D-ink2:#d6cdbf;--D-muted:#a69d90;--D-ar:#f0bf9e;--D-field:#271f22;--D-nav:#1f181a;--D-band:linear-gradient(180deg,#261d20,#1d1618);--D-accentline:rgba(214,175,105,.45);--D-pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23e8c27a' stroke-opacity='.045' stroke-width='1'%3E%3Cpath d='M28 6l6.5 15.5L50 28l-15.5 6.5L28 50l-6.5-15.5L6 28l15.5-6.5z'/%3E%3Cpath d='M12.5 12.5h31v31h-31z'/%3E%3Ccircle cx='28' cy='28' r='5'/%3E%3C/g%3E%3C/svg%3E")}
+:root[data-palette=olive]{--D-bg:#121613;--D-card:#1b211d;--D-card2:#212821;--D-line:#29312b;--D-line2:#343e36;--D-chip:#242b26;--D-ink:#efe8dd;--D-ink2:#d6cdbf;--D-muted:#a69d90;--D-ar:#e3c58f;--D-field:#1e2520;--D-nav:#181d19;--D-band:linear-gradient(180deg,#1c241f,#161c18);--D-accentline:rgba(214,175,105,.45);--D-pattern:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='56' viewBox='0 0 56 56'%3E%3Cg fill='none' stroke='%23e8c27a' stroke-opacity='.045' stroke-width='1'%3E%3Cpath d='M28 6l6.5 15.5L50 28l-15.5 6.5L28 50l-6.5-15.5L6 28l15.5-6.5z'/%3E%3Cpath d='M12.5 12.5h31v31h-31z'/%3E%3Ccircle cx='28' cy='28' r='5'/%3E%3C/g%3E%3C/svg%3E")}
+:root[data-theme=dark]{--bg:var(--D-bg);--bg-d:var(--D-bg);--card:var(--D-card);--card-line:var(--D-line);--chip:var(--D-chip);--line:var(--D-line);--line-strong:var(--D-line2);--ink:var(--D-ink);--ink-2:var(--D-ink2);--muted:var(--D-muted);--ar-flat:var(--D-ar);--ar:var(--D-ar);--field:var(--D-field);--nav:var(--D-nav)}
+:root[data-theme=dark] body{background:var(--D-bg)}
+:root[data-theme=dark] body::before{position:absolute;inset:0 0 auto 0;height:var(--band-h);background:var(--D-pattern),var(--D-band);border-radius:0 0 30px 30px;box-shadow:0 1px 0 var(--D-line);animation:none;transform:none}
+:root[data-theme=dark] .word-card,:root[data-theme=dark] .more-button,:root[data-theme=dark] .category-group,:root[data-theme=dark] .requests-view,:root[data-theme=dark] .conjugation,:root[data-theme=dark] .phrase-list,:root[data-theme=dark] .example,:root[data-theme=dark] .related-section>summary,:root[data-theme=dark] .forms-expand,:root[data-theme=dark] .ambiguous-choice,:root[data-theme=dark] .empty-state,:root[data-theme=dark] .word-of-day{background:var(--D-card);border:1px solid var(--D-line);box-shadow:0 1px 0 rgba(255,255,255,.03) inset,0 10px 24px -18px rgba(0,0,0,.8)}
+:root[data-theme=dark] .word-of-day::after{display:none}
+:root[data-theme=dark] .word-card.top-hit{background:var(--D-card2);border-color:var(--D-accentline)}
+:root[data-theme=dark] .word-card::before{background:var(--gold)}
+:root[data-theme=dark] .search-form{background:var(--D-field);border:1px solid var(--D-line2);-webkit-backdrop-filter:none;backdrop-filter:none;box-shadow:0 10px 24px -16px rgba(0,0,0,.8)}
+:root[data-theme=dark] .category-pill{background:rgba(255,255,255,.05);border-color:var(--D-line2)}
+:root[data-theme=dark] .nav-bar{background:var(--D-nav);border-color:var(--D-line2);-webkit-backdrop-filter:none;backdrop-filter:none}
+:root[data-theme=dark] body.scrolled .hero{background:var(--D-band);-webkit-backdrop-filter:none;backdrop-filter:none;border-bottom:1px solid var(--D-line)}
+:root[data-theme=dark] .detail-dialog{background:var(--D-bg);border:1px solid var(--D-line)}
+:root[data-theme=dark] .detail-top{background:var(--D-pattern),var(--D-band);border-radius:0 0 28px 28px}
+:root[data-theme=dark] .wod-ar,:root[data-theme=dark] .detail-ar{background:none;-webkit-background-clip:initial;background-clip:initial;color:var(--D-ar);filter:none;text-shadow:none}
+:root[data-theme=dark] .tense-tabs{background:var(--D-chip)}
+:root[data-theme=dark] .theme-menu{background:var(--D-card2);border-color:var(--D-line2)}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -614,7 +712,7 @@ body::after{content:none}                                   /* no calligraphy be
       <section class="requests-view" id="requestsView" hidden aria-label="בקשות להוספת מילים">
         <div class="request-add">
           <label class="sr-only" for="requestInput">מילה להוספה</label>
-          <input id="requestInput" type="text" inputmode="text" autocomplete="off" enterkeyhint="done" placeholder="מילה שחסרה לכם — בעברית או בערבית">
+          <input id="requestInput" type="text" inputmode="text" autocomplete="off" enterkeyhint="done" placeholder="איזו מילה חסרה?">
           <button id="requestAdd" class="primary-button">הוספה</button>
         </div>
         <div class="requests-head"><h2>הבקשות שלכם</h2><span id="requestsCount"></span></div>
@@ -622,7 +720,7 @@ body::after{content:none}                                   /* no calligraphy be
         <div class="requests-actions"><button id="requestsExport" class="text-button">ייצוא הבקשות לקובץ</button></div>
         <p class="requests-note">הבקשות נשמרות במכשיר בלבד. הקובץ המיוצא הוא מה שמעבירים כדי שהמילים ייבדקו ויתווספו.</p>
       </section>
-      <section class="category-view" id="categoryView" hidden aria-labelledby="categoryTitle"><div class="section-heading"><h2 id="categoryTitle">מה הנושא שלך?</h2><span class="section-note">כל הקטגוריות</span></div><div id="categoryGroups" class="category-groups"></div></section>
+      <section class="category-view" id="categoryView" hidden aria-labelledby="categoryTitle"><div class="section-heading"><h2 id="categoryTitle">מה הנושא שלך?</h2><span class="section-note" id="categoryCount"></span></div><div id="categoryGroups" class="category-groups"></div></section>
       <section class="results-section" id="resultsSection" aria-labelledby="resultsTitle">
         <div class="section-heading"><div class="results-heading"><h2 id="resultsTitle">לגלות מילים</h2><span id="resultCount" class="section-note" aria-live="polite" aria-atomic="true"></span></div><button class="text-button" id="allEntries">כל הערכים <span data-icon="arrowLeft"></span></button></div>
         <div class="active-filter" id="activeFilter" hidden></div>
@@ -906,7 +1004,7 @@ body::after{content:none}                                   /* no calligraphy be
   const smoothScroll=()=>matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth';
   const trx=s=>String(s??'').replace(/([\u05D0-\u05EA])'([\u0591-\u05C7]+)/g,'$1$2\u05F3').replace(/'/g,'\u05F3');
   const paths={
-    spark:'<path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/><path d="M19 3v4M17 5h4"/>',palette:'<path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.8 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15.5" cy="7.5" r="1.2"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',moon:'<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/>',
+    spark:'<path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/><path d="M19 3v4M17 5h4"/>',palette:'<path d="M12 3a9 9 0 1 0 0 18c1.1 0 1.8-.8 1.8-1.8 0-.5-.2-.9-.5-1.2-.3-.3-.5-.7-.5-1.2 0-1 .8-1.8 1.8-1.8H17a4 4 0 0 0 4-4C21 6.6 17 3 12 3z"/><circle cx="7.5" cy="11" r="1.2"/><circle cx="10.5" cy="7" r="1.2"/><circle cx="15.5" cy="7.5" r="1.2"/>',plus:'<path d="M12 5v14M5 12h14"/>',sun:'<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>',moon:'<path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/>',
     search:'<circle cx="10.7" cy="10.7" r="7.2"/><path d="m16 16 5 5"/>',
     bookmark:'<path d="M6 3.5h12v17l-6-4-6 4z"/>',grid:'<rect x="3" y="3" width="7" height="7" rx="1.2"/><rect x="14" y="3" width="7" height="7" rx="1.2"/><rect x="3" y="14" width="7" height="7" rx="1.2"/><rect x="14" y="14" width="7" height="7" rx="1.2"/>',
     close:'<path d="m6 6 12 12M18 6 6 18"/>',arrowRight:'<path d="M4 12h15m-6-6 6 6-6 6"/>',arrowLeft:'<path d="M20 12H5m6-6-6 6 6 6"/>',chevron:'<path d="m6 9 6 6 6-6"/>',
@@ -926,7 +1024,7 @@ body::after{content:none}                                   /* no calligraphy be
   if(themeBtn){themeBtn.setAttribute('aria-label','מראה וצבעים');themeBtn.setAttribute('aria-expanded','false');themeBtn.setAttribute('aria-haspopup','true');
     themeBtn.addEventListener('click',ev=>{ev.stopPropagation();if(themeMenuEl()){closeThemeMenu();return;}
       const menu=document.createElement('div');menu.id='themeMenu';menu.className='theme-menu';menu.setAttribute('role','group');menu.setAttribute('aria-label','מראה וצבעים');
-      menu.innerHTML=`<h3>ערכת צבעים</h3><div class="swatches">${PALETTES.map(p=>`<button class="swatch" data-palette="${p[0]}"><i style="background:linear-gradient(150deg,${p[2]},${p[3]})"></i>${p[1]}</button>`).join('')}</div><h3>תצוגה</h3><div class="modes"><button data-mode="dark">כהה</button><button data-mode="light">בהיר</button><button data-mode="auto">לפי המכשיר</button></div>`;
+      menu.innerHTML=`<h3>ערכת צבעים</h3><div class="swatches">${PALETTES.map(p=>`<button class="swatch" data-palette="${p[0]}"><i style="background:linear-gradient(150deg,${p[2]},${p[3]})"></i>${p[1]}</button>`).join('')}</div><h3>תצוגה</h3><div class="modes"><button data-mode="dark">כהה</button><button data-mode="light">בהיר</button><button data-mode="auto">אוטומטי</button></div>`;
       menu.addEventListener('click',e=>{e.stopPropagation();const pb=e.target.closest('[data-palette]'),mb=e.target.closest('[data-mode]');
         if(pb){const v=pb.dataset.palette;if(v==='night'){delete docEl.dataset.palette;keepPref('milon-palette',null);}else{docEl.dataset.palette=v;keepPref('milon-palette',v);}}
         if(mb){themeMode=mb.dataset.mode;keepPref('milon-theme',themeMode==='dark'?null:themeMode);applyMode();}
@@ -989,7 +1087,7 @@ function kin(w){
   function toggleSaved(id){
     const wasSaved=favorites.has(id);if(wasSaved)favorites.delete(id);else favorites.add(id);
     const saved=store.set(FAV_KEY,[...favorites]);syncSaved();
-    if(!saved)notify('השמירה זמינה כרגע עד סגירת העמוד בלבד.');
+    if(!saved)notify('השמירה זמינה כרגע עד סגירת העמוד בלבד.');else notify(wasSaved?'הוסר מהשמורים':'נשמר במילים השמורות');
     if(mode==='saved')renderResults();
     if(navigator.vibrate)navigator.vibrate(7);
   }
@@ -1023,26 +1121,32 @@ function kin(w){
   function renderCategories(){
     const query=MilonCore.norm($('q').value);
     const filtered=groups.map(g=>({...g,cats:g.cats.filter(c=>core.categories.has(c)&&(!query||MilonCore.norm(c+' '+g.title).includes(query)))})).filter(g=>g.cats.length);
-    $('categoryGroups').innerHTML=filtered.length?filtered.map(g=>`<details class="category-group" open><summary><span><i class="group-icon">${icon(g.icon)}</i>${esc(g.title)}</span><i class="chevron">${icon('chevron')}</i></summary><div class="category-items">${g.cats.map(c=>`<button class="category-item" data-category="${esc(c)}"><span>${esc(c)}</span><span class="number">${fmt(core.categories.get(c))}</span></button>`).join('')}</div></details>`).join(''):emptyHTML('לא מצאנו נושא כזה.','נסו שם אחר, או עברו למילון כדי לחפש מילה.','grid');
+    $('categoryCount').textContent=`${core.categories.size} נושאים`;$('categoryGroups').innerHTML=filtered.length?filtered.map(g=>`<details class="category-group" open><summary><span><i class="group-icon">${icon(g.icon)}</i>${esc(g.title)}</span><i class="chevron">${icon('chevron')}</i></summary><div class="category-items">${g.cats.map(c=>`<button class="category-item" data-category="${esc(c)}"><span>${esc(c)}</span><span class="number">${fmt(core.categories.get(c))}</span></button>`).join('')}</div></details>`).join(''):emptyHTML('לא מצאנו נושא כזה.','נסו שם אחר, או עברו למילון כדי לחפש מילה.','grid');
   }
   /* One plain-Hebrew line that says why this card answers the query (never engine jargon). */
   function whyHTML(row){
     const v=row.via;if(!v)return '';const q=$('q').value.trim(),b=x=>`<bdi lang="ar">${esc(x)}</bdi>`;
     const person=l=>esc(l.replace(/^תעתיק · /,'').replace(/^הווה \(אחרי بدي\/لازم\)/,'הווה בלי ב׳').replace(/ · /g,', '));
-    if(v.label==='פירוק'){
-      const parts=v.text.split(' + ').map(p=>{const m=p.match(/^(.*?) \((.*)\)$/);if(!m)return b(p);const ar=m[1],g=m[2];
-        return /^(עבר|הווה|ציווי|תעתיק)/.test(g)?`${b(ar)} <span class="why-note">(${person(g)})</span>`:`<span class="why-gloss">${esc(g)}</span>`;});
-      return `<span class="word-why">${b(q)} = ${parts.join(' + ')}</span>`;}
+    const isForm=g=>/^(עבר|הווה|ציווי|תעתיק)/.test(g);
+    const split=(word,text)=>{const parts=text.split(' + ').map(p=>{const m=p.match(/^(.*?) \((.*)\)$/);if(!m)return b(p);const ar=m[1],g=m[2];
+        return isForm(g)?`${b(ar)} <span class="why-note">(${person(g)})</span>`:`<span class="why-gloss">${esc(g)}</span>`;});
+      return `<span class="word-why">${b(word)} = ${parts.join(' + ')}</span>`;};
+    if(v.label==='פירוק')return split(q,v.text);
     if(v.label==='כתיב חלופי')return `<span class="word-why">כתיב אחר של ${b(v.text)}</span>`;
-    if(v.label==='מתוך החיפוש')return `<span class="word-why">מתוך החיפוש: ${b(v.text.split(' = ')[0].split(' (')[0])}</span>`;
+    if(v.label==='מתוך החיפוש'){const [w,rest]=v.text.split(' = ');
+      if(rest&&/(^|\s)ما\s/.test(q)&&/ش$/.test(w)){const core=rest.replace(/ \+ ش \(שלילה\)$/,'');const m=core.match(/^(.*?) \((.*)\)$/);
+        return `<span class="word-why">${b(q)} = לא + ${m?`${b(m[1])} <span class="why-note">(${person(m[2])})</span>`:b(core)}</span>`;}
+      if(rest)return split(w,rest);
+      const m=w.match(/^(.*?) \((.*)\)$/);return m?`<span class="word-why">${b(m[1])} היא צורת הפועל: ${person(m[2])}</span>`:`<span class="word-why">מתוך החיפוש: ${b(w)}</span>`;}
     if(v.label==='משפט לדוגמה')return `<span class="word-why">מופיע במשפט לדוגמה</span>`;
-    if(/^(עבר|הווה|ציווי|תעתיק)/.test(v.label))return `<span class="word-why">${b(v.text)} היא צורת הפועל: ${person(v.label)}</span>`;
-    return `<span class="word-why">${esc(v.label)}</span>`;
+    if(isForm(v.label))return `<span class="word-why">${b(v.text)} היא צורת הפועל: ${person(v.label)}</span>`;
+    return '';
   }
   function cardHTML(row){
     const e=row.entry,saved=favorites.has(e.id),verb=!!(e.conj||e.pres||e.imp),long=/\s/.test(e.tr.trim())||e.ar.length>18||MilonCore.norm(e.tr).length>19;
-    const catLabel=e.cat==='פעלים - נטיות'?'פעלים':e.cat;
-    return `<article class="word-card${long?' long':''}" data-entry="${e.id}"><button class="word-face" data-open="${e.id}" aria-label="${esc(e.tr+' — '+e.he)}"><span class="word-line"><span class="word-tr" dir="rtl">${esc(trx(e.tr))}</span><span class="word-ar" lang="ar" dir="rtl">${esc(e.ar)}</span></span><span class="word-bottom"><span class="word-meaning">${esc(e.he)}</span><span class="word-meta"><span class="tag${verb||e.cat==='ברכות'?' terra':''}">${esc(catLabel)}</span>${verb?'<span class="tag verb">נטייה מלאה</span>':''}</span></span>${whyHTML(row)}</button><button class="bookmark" data-save="${e.id}" aria-pressed="${saved}" aria-label="${saved?'הסרה מהשמורים':'שמירת המילה'}">${icon('bookmark')}</button></article>`;
+    const catLabel=/^פעלים/.test(e.cat)?'פועל':e.cat,showCat=!category||category!==e.cat;
+    const he=String(e.he).replace(/\?,\s*/g,'? / ');
+    return `<article class="word-card${long?' long':''}" data-entry="${e.id}"><button class="word-face" data-open="${e.id}" aria-label="${esc(e.tr+' — '+he)}"><span class="word-line"><span class="word-tr" dir="rtl">${esc(trx(e.tr))}</span><span class="word-ar" lang="ar" dir="rtl">${esc(e.ar)}</span></span><span class="word-bottom"><span class="word-meaning">${esc(he)}</span><span class="word-meta">${showCat?`<span class="tag">${esc(catLabel)}</span>`:''}${verb?'<span class="tag verb">טבלת נטיות</span>':''}</span></span>${whyHTML(row)}</button><button class="bookmark" data-save="${e.id}" aria-pressed="${saved}" aria-label="${saved?'הסרה מהשמורים':'שמירת המילה'}">${icon('bookmark')}</button></article>`;
   }
   function emptyHTML(title,text,symbol='search',actions=''){return `<div class="empty-state"><div class="empty-symbol">${icon(symbol)}</div><h3>${title}</h3><p>${text}</p>${actions}</div>`;}
   /* מילה ליום: נבחרת לפי התאריך מתוך ערכים קצרים שיש להם משפט דוגמה */
@@ -1058,16 +1162,16 @@ function kin(w){
     if(mode==='categories'){renderCategories();return;}
     result=core.search(query,{category,favorites:mode==='saved'?favorites:null});
     if(!query&&mode==='dictionary'&&!category){const featured=['مرحبا','بيت','فتح'].map(ar=>dictionary.find(e=>e.ar===ar)).filter(Boolean),ids=new Set(featured.map(e=>e.id));result.rows=[...featured.map(entry=>({entry,via:null,score:0})),...result.rows.filter(r=>!ids.has(r.entry.id))];}
-    $('resultsTitle').textContent=mode==='saved'?'המילים השמורות':query?'תוצאות החיפוש':category||'לגלות מילים';
-    $('allEntries').hidden=mode==='saved';$('allEntries').textContent=category?'כל הנושאים':'כל הערכים';$('allEntries').insertAdjacentHTML('beforeend',icon('arrowLeft'));
-    $('activeFilter').hidden=!category;$('activeFilter').innerHTML=category?`<span>נושא:</span><button class="remove-filter" data-category="">${esc(category)} ${icon('close')}</button>`:'';
+    $('resultsTitle').textContent=mode==='saved'?'המילים השמורות':query?`תוצאות עבור «${query}»`:category||'לגלות מילים';
+    $('allEntries').hidden=mode==='saved'||!!query;$('allEntries').textContent=category?'כל הנושאים':'כל הערכים';$('allEntries').insertAdjacentHTML('beforeend',icon('arrowLeft'));
+    $('activeFilter').hidden=true;$('activeFilter').innerHTML=category?`<span>נושא:</span><button class="remove-filter" data-category="">${esc(category)} ${icon('close')}</button>`:'';
     results.innerHTML=!query&&mode==='dictionary'&&!category?dayHTML():'';shown=0;
-    $('resultCount').textContent=query||mode==='saved'?`${fmt(result.rows.length)} ${result.rows.length===1?'תוצאה':'תוצאות'}`:'';
-    if(result.tooShort){$('resultCount').textContent='';results.innerHTML=emptyHTML('עוד אות, ואנחנו שם.','הקלידו לפחות שתי אותיות כדי למצוא מילה.');return;}
+    $('resultCount').textContent=mode==='saved'?(result.rows.length?`${fmt(result.rows.length)} ${result.rows.length===1?'מילה':'מילים'}`:''):query&&result.rows.length?`${fmt(result.rows.length)} ${result.rows.length===1?'תוצאה':'תוצאות'}`:'';
+    if(result.tooShort){$('resultCount').textContent='';results.innerHTML=emptyHTML('עוד אות אחת','הקלידו לפחות שתי אותיות כדי למצוא מילה.');return;}
     if(!result.rows.length&&!result.loose.length){
-      if(mode==='saved'){results.innerHTML=emptyHTML(favorites.size?'אין התאמה בשמורים':'כאן יהיו המילים שלך.',favorites.size?'נסו חיפוש אחר או חפשו בכל המילון.':'לחיצה על הסימנייה ליד מילה שומרת אותה לחזרה מהירה.','bookmark',query?'<button class="primary-button" data-action="global-search">חיפוש בכל המילון</button>':'<button class="primary-button" data-action="dictionary">לגלות מילים</button>');}
+      if(mode==='saved'){results.innerHTML=emptyHTML(favorites.size?'אין התאמה בשמורים':'כאן יופיעו המילים שתשמרו',favorites.size?'נסו חיפוש אחר או חפשו בכל המילון.':'לחיצה על הסימנייה ליד מילה שומרת אותה לחזרה מהירה.','bookmark',query?'<button class="primary-button" data-action="global-search">חיפוש בכל המילון</button>':'<button class="primary-button" data-action="dictionary">לגלות מילים</button>');}
       else if(category){results.innerHTML=emptyHTML('אין התאמה בנושא הזה.','אפשר לחפש את אותה מילה בכל המילון.','search','<button class="primary-button" data-action="clear-filter">חיפוש בכל הנושאים</button>');}
-      else{results.innerHTML=emptyHTML('לא נמצאו תוצאות.','אפשר לנסות כתיב אחר: בלי ניקוד, בתעתיק עברי או בערבית. אם המילה באמת חסרה, אפשר לשמור בקשה להוספה. הבקשה נשמרת במכשיר שלך בלבד.','search','<button class="primary-button" data-action="request-word">שמירת בקשה להוספת המילה</button>'+(missingLoad().length?'<div class="secondary-actions"><button class="text-button" data-action="export-missing">ייצוא הבקשות</button></div>':''));}
+      else{results.innerHTML=emptyHTML('לא נמצאו תוצאות','נסו בלי ניקוד, בתעתיק עברי או בערבית.','search','<button class="primary-button" data-action="request-word">שמירת בקשה להוספת המילה</button>'+(missingLoad().length?'<div class="secondary-actions"><button class="text-button" data-action="export-missing">ייצוא הבקשות</button></div>':''));}
       return;
     }
     appendPage();
@@ -1099,7 +1203,7 @@ function kin(w){
     const tenseList=[];if(entry.conj)tenseList.push(['עבר',entry.conj]);if(entry.pres)tenseList.push(['הווה',entry.pres]);if(entry.imp)tenseList.push(['ציווי',entry.imp]);
     const k=kin(entry),long=MilonCore.norm(entry.tr).length>13;
     const type=tenseList.length?'פועל':entry.cat;
-    $('detailContent').innerHTML=`<section class="detail-top" id="detailTop" tabindex="-1"><span class="detail-glyph" lang="ar" aria-hidden="true">${esc(String(entry.ar).trim().split(/\s+/)[0])}</span><div class="detail-bar"><button class="detail-back" data-action="close-detail">${icon('arrowRight')} חזרה</button><button class="detail-save" data-save="${entry.id}" aria-pressed="${favorites.has(entry.id)}" aria-label="שמירת המילה">${icon('bookmark')}</button></div><span class="word-type">${esc(type)}</span><h1 id="detailTitle" class="detail-title${long?' long':''}">${esc(trx(entry.tr))}</h1><div class="detail-ar${long?' long':''}" lang="ar" dir="rtl">${esc(entry.ar)}</div><p class="detail-meaning">${esc(entry.he)}</p><div class="detail-rule" aria-hidden="true"><i></i></div><button class="hear-button" data-action="speak">${icon('volume')} <span>השמעה</span></button><p class="speech-caption" id="speechCaption">קול ממוחשב · לא בהכרח במבטא פלסטיני</p></section><div class="detail-sheet">${entry.ex?.length?`<section class="detail-section"><h2>כך אומרים את זה</h2>${entry.ex.map(x=>`<div class="example">${x.tr?`<p class="example-tr" dir="rtl">${esc(trx(x.tr))}</p>`:''}<p class="example-ar" lang="ar" dir="rtl">${esc(x.ar)}</p><p class="example-he">${esc(x.he)}</p></div>`).join('')}</section>`:''}${tenseList.length?`<section class="detail-section"><h2>איך משתמשים בפועל?</h2><div class="tense-tabs" role="tablist" aria-label="זמן הפועל">${tenseList.map((t,i)=>`<button id="tenseTab${i}" role="tab" data-tense="${i}" aria-controls="tensePanel" aria-selected="false" tabindex="-1">${t[0]}</button>`).join('')}</div><div id="tensePanel" role="tabpanel" tabindex="0"></div></section>`:''}<section class="detail-section" id="phraseSection" hidden></section>${k.l.length?`<details class="detail-section related-section"><summary><h2>מילים בקשר משוער</h2><span class="related-note">ניחוש לפי שורש, לא קשר ודאי</span></summary><div class="related-list">${k.l.map(e=>`<button class="related-word" data-open="${e.id}"><span lang="ar">${esc(e.ar)}</span><span class="related-he">${esc(e.he)}</span></button>`).join('')}</div></details>`:''}<div class="detail-tools"><button class="external-tool" data-action="copy-ar">העתקת הערבית ${icon('copy')}</button><a class="external-tool" href="https://youglish.com/pronounce/${encodeURIComponent(entry.ar)}/arabic" target="_blank" rel="noopener noreferrer">הגייה בסרטון ${icon('external')}</a><a class="external-tool" href="https://forvo.com/word/${encodeURIComponent(entry.ar)}/" target="_blank" rel="noopener noreferrer">Forvo ${icon('external')}</a><button class="external-tool" data-action="share-entry">העתקת קישור ${icon('external')}</button></div><p class="external-caption">מקורות ההגייה החיצוניים דורשים חיבור לאינטרנט.</p></div>`;
+    $('detailContent').innerHTML=`<section class="detail-top" id="detailTop" tabindex="-1"><div class="detail-bar"><button class="detail-back" data-action="close-detail">${icon('arrowRight')} חזרה</button><button class="detail-save" data-save="${entry.id}" aria-pressed="${favorites.has(entry.id)}" aria-label="שמירת המילה">${icon('bookmark')}</button></div><span class="word-type">${esc(type)}</span><h1 id="detailTitle" class="detail-title${long?' long':''}">${esc(trx(entry.tr))}</h1><div class="detail-ar${long?' long':''}" lang="ar" dir="rtl">${esc(entry.ar)}</div><p class="detail-meaning">${esc(entry.he)}</p><div class="detail-rule" aria-hidden="true"><i></i></div><button class="hear-button" data-action="speak">${icon('volume')} <span>השמעה</span></button><p class="speech-caption" id="speechCaption">קול ממוחשב · לא בהכרח במבטא פלסטיני</p></section><div class="detail-sheet">${entry.ex?.length?`<section class="detail-section"><h2>כך אומרים את זה</h2>${entry.ex.map(x=>`<div class="example">${x.tr?`<p class="example-tr" dir="rtl">${esc(trx(x.tr))}</p>`:''}<p class="example-ar" lang="ar" dir="rtl">${esc(x.ar)}</p><p class="example-he">${esc(x.he)}</p></div>`).join('')}</section>`:''}${tenseList.length?`<section class="detail-section"><h2>איך משתמשים בפועל?</h2><div class="tense-tabs" role="tablist" aria-label="זמן הפועל">${tenseList.map((t,i)=>`<button id="tenseTab${i}" role="tab" data-tense="${i}" aria-controls="tensePanel" aria-selected="false" tabindex="-1">${t[0]}</button>`).join('')}</div><div id="tensePanel" role="tabpanel" tabindex="0"></div></section>`:''}<section class="detail-section" id="phraseSection" hidden></section>${k.l.length?`<details class="detail-section related-section"><summary><h2>מאותו שורש</h2><span class="related-note">הקשר לפי השורש בלבד, לא תמיד באותה משמעות</span></summary><div class="related-list">${k.l.map(e=>`<button class="related-word" data-open="${e.id}"><span lang="ar">${esc(e.ar)}</span><span class="related-he">${esc(e.he)}</span></button>`).join('')}</div></details>`:''}<div class="detail-tools"><button class="external-tool" data-action="copy-ar">העתקת הערבית ${icon('copy')}</button><button class="external-tool" data-action="share-entry">העתקת קישור ${icon('copy')}</button><a class="external-tool" href="https://youglish.com/pronounce/${encodeURIComponent(entry.ar)}/arabic" target="_blank" rel="noopener noreferrer">הגייה בסרטון ${icon('external')}</a><a class="external-tool" href="https://forvo.com/word/${encodeURIComponent(entry.ar)}/" target="_blank" rel="noopener noreferrer">Forvo ${icon('external')}</a></div><p class="external-caption">מקורות ההגייה החיצוניים דורשים חיבור לאינטרנט.</p></div>`;
     currentTenses=tenseList;
     if(tenseList.length)renderTense(Math.max(0,tenseList.findIndex(t=>t[0]==='הווה')));
     syncSaved();document.title=entry.tr+' — '+entry.he+' | מילון';showDialog();$('detailTop').focus({preventScroll:true});fillPhrases(entry);
@@ -1110,7 +1214,7 @@ function kin(w){
     dialog.querySelectorAll('[data-tense]').forEach(t=>{const selected=Number(t.dataset.tense)===index;t.setAttribute('aria-selected',String(selected));t.tabIndex=selected?0:-1;});
     const panel=$('tensePanel');panel.setAttribute('aria-labelledby','tenseTab'+index);
     const visible=detailExpanded?forms:forms.slice(0,6),long=visible.some(c=>MilonCore.norm(c.tr).length>9||c.ar.length>10);
-    panel.innerHTML=`<table class="conjugation${long?' conjugation-long':''}"><caption class="sr-only">נטיית ${esc(currentEntry.he)} בזמן ${tenses[index][0]}</caption><thead class="sr-only"><tr><th>גוף</th><th>ערבית</th><th>תעתיק</th></tr></thead><tbody>${visible.map(c=>`<tr><td class="pronoun">${esc(c.p)}</td><td class="arabic" lang="ar" dir="rtl">${esc(c.ar)}</td><td class="translit" dir="rtl">${esc(trx(c.tr))}</td></tr>`).join('')}</tbody></table>${forms.length>6?`<button class="forms-expand" data-action="expand-forms" aria-expanded="${detailExpanded}">${detailExpanded?'תצוגה מקוצרת':'כל הנטיות'} ${icon('chevron')}</button>`:''}`;
+    panel.innerHTML=`<table class="conjugation${long?' conjugation-long':''}"><caption class="sr-only">נטיית ${esc(currentEntry.he)} בזמן ${tenses[index][0]}</caption><thead class="sr-only"><tr><th>גוף</th><th>תעתיק</th><th>ערבית</th></tr></thead><tbody>${visible.map(c=>`<tr><td class="pronoun">${esc(c.p)}</td><td class="translit" dir="rtl">${esc(trx(c.tr))}</td><td class="arabic" lang="ar" dir="rtl">${esc(c.ar)}</td></tr>`).join('')}</tbody></table>${forms.length>6?`<button class="forms-expand" data-action="expand-forms" aria-expanded="${detailExpanded}">${detailExpanded?'פחות גופים':'כל הגופים'} ${icon('chevron')}</button>`:''}`;
   }
   function resolveLocation(){
     try{
@@ -1148,7 +1252,7 @@ function kin(w){
     const list=missingLoad(),box=$('requestsList');
     $('requestsCount').textContent=list.length?`${fmt(list.length)} ${list.length===1?'בקשה':'בקשות'}`:'';
     $('requestsExport').disabled=!list.length;
-    if(!list.length){box.innerHTML=emptyHTML('אין עדיין בקשות.','מילה שלא מצאתם? הוסיפו אותה כאן, או בקשו אותה ישירות ממסך החיפוש.','bookmark');return;}
+    if(!list.length){box.innerHTML=emptyHTML('אין עדיין בקשות','מילה שלא מצאתם? שמרו אותה כאן כבקשה.','plus');return;}
     box.innerHTML=list.map(r=>{
       const when=r.lastAt?new Date(r.lastAt).toLocaleDateString('he-IL'):'';
       const times=(Number(r.count)||0)>1?` · בוקשה ${fmt(r.count)} פעמים`:'';
